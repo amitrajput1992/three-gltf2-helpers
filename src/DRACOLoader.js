@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import DracoDecoderModule from './draco/draco_decoder';
+import DracoDecoderModule from '../src/draco/draco_decoder';
 /**
  * @param {THREE.LoadingManager} manager
  */
