@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import DracoDecoderModule from './draco/draco_decoder';
 /**
  * @param {THREE.LoadingManager} manager
  */
@@ -430,9 +431,26 @@ DRACOLoader.getDecoderModule = function () {
   var config = DRACOLoader.decoderConfig;
   var promise = DRACOLoader.decoderModulePromise;
 
+  // DracoDecoderModule: Using asm based script for backwards compatibility
+  // DracoDecoderModule is already included as a module.
+
   if ( promise ) return promise;
 
-  // Load source files.
+  promise = Promise.resolve().then(function () {
+    return new Promise(function (resolve) {
+      config.onModuleLoaded = function (decoder) {
+        scope.timeLoaded = performance.now();
+        // Module is Promise-like. Wrap before resolving to avoid loop.
+        resolve({decoder: decoder});
+      };
+      DracoDecoderModule(config);
+    });
+  });
+
+  DRACOLoader.decoderModulePromise = promise;
+  return promise;
+
+  /*// Load source files.
   if ( typeof DracoDecoderModule !== 'undefined' ) {
     // Loaded externally.
     promise = Promise.resolve();
@@ -464,7 +482,7 @@ DRACOLoader.getDecoderModule = function () {
   } );
 
   DRACOLoader.decoderModulePromise = promise;
-  return promise;
+  return promise;*/
 };
 
 /**
