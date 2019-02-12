@@ -499,4 +499,6 @@ DRACOLoader._loadArrayBuffer = function ( src ) {
   });
 };
 
+DRACOLoader.setDecoderPath('../src/draco');
+
 export default DRACOLoader;
