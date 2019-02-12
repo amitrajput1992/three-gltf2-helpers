@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import DRACOLoader from './DRACOLoader';
 
 let GLTFLoader = ( function () {
 
@@ -506,7 +507,7 @@ let GLTFLoader = ( function () {
     this.name = EXTENSIONS.KHR_DRACO_MESH_COMPRESSION;
     this.json = json;
     this.dracoLoader = dracoLoader;
-    THREE.DRACOLoader.getDecoderModule();
+    DRACOLoader.getDecoderModule();
 
   }
 
