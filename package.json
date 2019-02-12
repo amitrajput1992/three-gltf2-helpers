@@ -1,0 +1,59 @@
+{
+  "name": "three-gltf2-helpers",
+  "version": "1.2.0",
+  "description": "Node.js wrapper for the GLTF Loader and DracoLoader",
+  "main": "lib/main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitrajput1992/three-gltf2-helpers.git"
+  },
+  "scripts": {
+    "bundle": "rm -rf lib; yarn babel src --config-file ./babel-preset-stage2.js --no-babelrc --out-dir lib/ --ignore 'src/draco/**'"
+  },
+  "keywords": [
+    "three.js",
+    "gltf2",
+    "gltf",
+    "loader",
+    "webgl",
+    "es6",
+    "draco",
+    "dracoLoader"
+  ],
+  "author": {
+    "name": "Amit Rajput",
+    "email": "amitrajput123.ar@gmail.com",
+    "url": "https://github.com/amitrajput1992"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amitrajput1992/issues"
+  },
+  "homepage": "https://github.com/amitrajput1992/three-gltf2-loader#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-decorators": "^7.2.3",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.2.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "detect-circular-deps": "^1.3.0",
+    "eslint": "^5.13.0",
+    "eslint-plugin-flowtype": "^3.2.1",
+    "eslint-plugin-react": "^7.12.4"
+  }
+}
